@@ -225,7 +225,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -248,7 +248,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_left",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,7 +271,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_right",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -294,7 +294,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -317,7 +317,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_down",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -340,7 +340,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_left",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -363,7 +363,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_right",
-"speed": 10.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -386,7 +386,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_up",
-"speed": 10.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
@@ -399,10 +399,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 0.989287)
 sprite_frames = SubResource("SpriteFrames_ur7pv")
-animation = &"run_left"
+animation = &"run_up"
 autoplay = "idle_down"
-frame = 4
-frame_progress = 0.375637
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.14547, 0.818597)
