@@ -1,13 +1,11 @@
 extends Node
 
-var chapter := 1
-var night := 1
+var night := 0
 
 var flags := {}
 var choices := {}
 
 func reset():
-	chapter = 1
-	night = 1
+	night = 0
 	flags.clear()
 	choices.clear()

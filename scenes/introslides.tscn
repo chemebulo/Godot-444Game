@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://cp1jgyyvjpl0c"]
+
+[ext_resource type="Script" uid="uid://d37a2l43olc5x" path="res://scritps/introslides.gd" id="1_ptwoc"]
+[ext_resource type="Texture2D" uid="uid://d0vgeblwmmxqv" path="res://assets/diapositiva-1.png" id="2_ep6h8"]
+[ext_resource type="Texture2D" uid="uid://diqlqq1fnmbmm" path="res://assets/diapositiva-2.png" id="3_jul6g"]
+[ext_resource type="Texture2D" uid="uid://drcuuhxpolssx" path="res://assets/diapositiva-3.png" id="4_d0n60"]
+[ext_resource type="Texture2D" uid="uid://bhc0es8nmde0a" path="res://assets/diapositiva-4.png" id="5_r872e"]
+[ext_resource type="Texture2D" uid="uid://dylrlskdd8u4n" path="res://assets/diapositiva-5.png" id="6_k028e"]
+[ext_resource type="Texture2D" uid="uid://8bbq83irms4" path="res://assets/diapositiva-6.png" id="7_y614q"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptwoc")
+slides = Array[Texture2D]([ExtResource("2_ep6h8"), ExtResource("3_jul6g"), ExtResource("4_d0n60"), ExtResource("5_r872e"), ExtResource("6_k028e"), ExtResource("7_y614q")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6

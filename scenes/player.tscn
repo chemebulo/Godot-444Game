@@ -393,6 +393,7 @@ animations = [{
 size = Vector2(6, 12)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1, 0.996471)
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
 
