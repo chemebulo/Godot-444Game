@@ -4,7 +4,7 @@ extends CharacterBody2D
 var speed = 100
 var last_direction = "down"
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
 
