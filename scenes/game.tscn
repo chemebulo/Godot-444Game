@@ -1,15 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://curbf3fqvcuw3"]
+[gd_scene load_steps=6 format=3 uid="uid://curbf3fqvcuw3"]
 
 [ext_resource type="Script" uid="uid://dx5vg7vw5auvl" path="res://scritps/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bee0r1ue2kxhn" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bpba4rvvx5mbb" path="res://scritps/pausemenu.gd" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://5dcfuapkebbl" path="res://scritps/hintlabel.gd" id="3_iywne"]
+[ext_resource type="Script" uid="uid://dji45yufq1v1k" path="res://scritps/controlspanel.gd" id="3_lbhrr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lnu2h")
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(87.2184, 43.4355)
+position = Vector2(96, 54)
 scale = Vector2(1.00326, 1.00784)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HintLabel" type="Label" parent="UI"]
+offset_left = 69.0
+offset_top = 82.0
+offset_right = 309.0
+offset_bottom = 105.0
+scale = Vector2(0.26569, 0.26569)
+size_flags_horizontal = 4
+text = "Apretá H para ver los controles"
+script = ExtResource("3_iywne")
+
+[node name="ControlsPanel" type="Panel" parent="UI"]
+offset_left = 77.0
+offset_top = 34.0
+offset_right = 117.0
+offset_bottom = 74.0
+script = ExtResource("3_lbhrr")
+
+[node name="Label" type="Label" parent="UI/ControlsPanel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 11.0
+offset_right = 168.0
+offset_bottom = 112.0
+scale = Vector2(0.203656, 0.203656)
+text = "W A S D - Movimiento
+E - Interactuar
+H - Ver controles
+ESC - Pausa"
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 process_mode = 3
