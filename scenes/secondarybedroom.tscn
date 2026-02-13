@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://np0sf1x11mt6"]
+[gd_scene load_steps=12 format=4 uid="uid://np0sf1x11mt6"]
 
 [ext_resource type="Texture2D" uid="uid://cyxqwgnhoanve" path="res://assets/background.png" id="1_d1q4b"]
 [ext_resource type="Texture2D" uid="uid://b7nl7jinr2iry" path="res://assets/444_tileset_x16.png" id="2_xmncb"]
 [ext_resource type="PackedScene" uid="uid://bee0r1ue2kxhn" path="res://scenes/player.tscn" id="3_xlrbj"]
+[ext_resource type="PackedScene" uid="uid://b8hnl3ako1c5q" path="res://scenes/door.tscn" id="4_aieml"]
+[ext_resource type="PackedScene" uid="uid://dfjacur5o24gf" path="res://scenes/mainbedroom.tscn" id="5_lgi2r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xmncb"]
 texture = ExtResource("1_d1q4b")
@@ -97,12 +99,16 @@ texture = ExtResource("2_xmncb")
 1:31/0 = 0
 2:31/0 = 0
 3:31/0 = 0
+3:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:31/0 = 0
 5:31/0 = 0
 6:31/0 = 0
+6:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:31/0 = 0
+7:31/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_lgi2r"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_aieml")
 
 [node name="Node2D" type="Node2D"]
@@ -121,3 +127,7 @@ tile_set = SubResource("TileSet_lgi2r")
 
 [node name="Player" parent="." instance=ExtResource("3_xlrbj")]
 position = Vector2(98, 55)
+
+[node name="Door" parent="." instance=ExtResource("4_aieml")]
+position = Vector2(56, -17)
+target_scene = ExtResource("5_lgi2r")
