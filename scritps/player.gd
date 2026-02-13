@@ -4,6 +4,9 @@ extends CharacterBody2D
 var speed = 100
 var last_direction = "down"
 
+func _ready():
+	add_to_group("player")
+
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
@@ -32,3 +35,6 @@ func get_input():
 
 func update_animation(state):
 	animated_sprite.play(state + "_" + last_direction)
+
+func name():
+	"Player"
