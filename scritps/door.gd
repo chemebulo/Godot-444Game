@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var target_scene: PackedScene
+@export var target_scene: String
 
 var player_in_range:= false
 
@@ -21,4 +21,4 @@ func _on_body_exited(body):
 		player_in_range = false
 
 func change_room():
-	get_tree().change_scene_to_packed(target_scene)
+	get_tree().change_scene_to_file(target_scene)
