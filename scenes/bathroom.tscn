@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=4 uid="uid://noyucpi5x72x"]
+
+[ext_resource type="Texture2D" uid="uid://cyxqwgnhoanve" path="res://assets/background.png" id="1_j2cwc"]
+[ext_resource type="Texture2D" uid="uid://cyc4jpnv2yyx4" path="res://assets/walls_bathroom.png" id="1_qx0gp"]
+[ext_resource type="Texture2D" uid="uid://nlvqh76g4r3g" path="res://assets/floor_bathroom.png" id="2_gknyc"]
+[ext_resource type="PackedScene" uid="uid://b8hnl3ako1c5q" path="res://scenes/door.tscn" id="4_82jhl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jhl"]
+texture = ExtResource("1_j2cwc")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qfxnf"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_82jhl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gknyc"]
+texture = ExtResource("1_qx0gp")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_j2cwc"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_gknyc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2cwc"]
+texture = ExtResource("2_gknyc")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_82jhl"]
+sources/3 = SubResource("TileSetAtlasSource_j2cwc")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAABAAEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAADAP7/AQAAAAAAAAACAP7/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAP7/AQAAAAAAAAACAP//AQAAAAAAAAADAP//AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_qfxnf")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAP7/AQAAAAAAAAADAP7/AQABAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQABAAAAAAAGAP7/AQAAAAAAAAAHAP7/AQABAAAAAAAIAP7/AQAAAAAAAAAJAP7/AQABAAAAAAACAP3/AQACAAAAAAADAP3/AQADAAAAAAAEAP3/AQACAAAAAAAFAP3/AQADAAAAAAAGAP3/AQACAAAAAAAHAP3/AQADAAAAAAAIAP3/AQACAAAAAAAJAP3/AQADAAAAAAACAP//AQAEAAAAAAADAP//AQAFAAAAAAAEAP//AQAEAAAAAAAFAP//AQAFAAAAAAAGAP//AQAEAAAAAAAHAP//AQAFAAAAAAAIAP//AQAEAAAAAAAJAP//AQAFAAAAAAAKAP7/AQAGAAAAAAAKAP//AQAGAAAAAAAKAAAAAQAGAAAAAAAKAAEAAQAGAAAAAAAKAAIAAQAGAAAAAAAKAAMAAQAGAAAAAAAKAAQAAQAGAAAAAAAKAP3/AQAGAAAAAAABAP3/AQAGAAAAADABAP7/AQAGAAAAADABAP//AQAGAAAAADABAAAAAQAGAAAAADABAAEAAQAGAAAAADABAAIAAQAGAAAAADABAAMAAQAGAAAAADABAAQAAQAGAAAAADACAAUAAQAGAAAAAFADAAUAAQAGAAAAAFAEAAUAAQAGAAAAAFAFAAUAAQAGAAAAAFAGAAUAAQAGAAAAAFAHAAUAAQAGAAAAAFAIAAUAAQAGAAAAAFAJAAUAAQAGAAAAAFAKAAUAAQAHAAAAAAABAAUAAQAHAAAAAFA=")
+tile_set = SubResource("TileSet_j2cwc")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAAAAAwAAAAAAAAADAAAAAwAAAAAAAAAEAAAAAwAAAAAAAAAFAAAAAwAAAAAAAAAGAAAAAwAAAAAAAAAHAAAAAwAAAAAAAAAIAAAAAwAAAAAAAAAJAAAAAwAAAAAAAAAJAAEAAwAAAAAAAAAIAAEAAwAAAAAAAAAHAAEAAwAAAAAAAAAGAAEAAwAAAAAAAAAFAAEAAwAAAAAAAAAEAAEAAwAAAAAAAAADAAEAAwAAAAAAAAACAAEAAwAAAAAAAAACAAIAAwAAAAAAAAADAAIAAwAAAAAAAAAEAAIAAwAAAAAAAAAFAAIAAwAAAAAAAAAGAAIAAwAAAAAAAAAHAAIAAwAAAAAAAAAIAAIAAwAAAAAAAAAJAAIAAwAAAAAAAAACAAMAAwAAAAAAAAADAAMAAwAAAAAAAAAEAAMAAwAAAAAAAAAFAAMAAwAAAAAAAAAGAAMAAwAAAAAAAAAHAAMAAwAAAAAAAAAIAAMAAwAAAAAAAAAJAAMAAwAAAAAAAAAJAAQAAwAAAAAAAAAIAAQAAwAAAAAAAAAHAAQAAwAAAAAAAAAGAAQAAwAAAAAAAAAFAAQAAwAAAAAAAAAEAAQAAwAAAAAAAAADAAQAAwAAAAAAAAACAAQAAwAAAAAAAAA=")
+tile_set = SubResource("TileSet_82jhl")
+
+[node name="Door" parent="." instance=ExtResource("4_82jhl")]
+position = Vector2(96, -16)
+target_scene_path = "res://scenes/hallway.tscn"
+target_spawn_name = "Spawn_From_Bathroom"
+
+[node name="Spawn" type="Node2D" parent="."]
+
+[node name="Spawn_From_Hallway" type="Marker2D" parent="Spawn"]
+position = Vector2(96, 8)

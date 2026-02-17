@@ -53,4 +53,10 @@ tile_set = SubResource("TileSet_3ljo6")
 
 [node name="Door" parent="." instance=ExtResource("3_pirbk")]
 position = Vector2(88, -16)
-target_scene_path = "res://scenes/secondarybr.tscn"
+target_scene_path = "res://scenes/hallway.tscn"
+target_spawn_name = "Spawn_From_MainBedroom"
+
+[node name="Spawn" type="Node2D" parent="."]
+
+[node name="Spawn_From_Hallway" type="Marker2D" parent="Spawn"]
+position = Vector2(88, 8)

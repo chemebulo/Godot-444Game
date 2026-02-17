@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://curbf3fqvcuw3"]
+[gd_scene load_steps=7 format=3 uid="uid://curbf3fqvcuw3"]
 
 [ext_resource type="Script" uid="uid://dx5vg7vw5auvl" path="res://scritps/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bee0r1ue2kxhn" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bpba4rvvx5mbb" path="res://scritps/pausemenu.gd" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://5dcfuapkebbl" path="res://scritps/hintlabel.gd" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dji45yufq1v1k" path="res://scritps/controlspanel.gd" id="3_lbhrr"]
+[ext_resource type="Script" uid="uid://vkes644anpd7" path="res://scritps/fade_layer.gd" id="6_p57ef"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lnu2h")
@@ -95,6 +96,19 @@ text = "Volver al menú"
 [node name="Button3" type="Button" parent="PauseMenu/Control/VBoxContainer"]
 layout_mode = 2
 text = "Salir"
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+layer = 100
+script = ExtResource("6_p57ef")
+
+[node name="ColorRect" type="ColorRect" parent="FadeLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
 
 [connection signal="pressed" from="PauseMenu/Control/VBoxContainer/Button" to="PauseMenu" method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Control/VBoxContainer/Button2" to="PauseMenu" method="_on_main_menu_pressed"]

@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var target_scene_path: String
+@export var target_spawn_name: String
 
 var player_in_range:= false
 
@@ -28,4 +29,4 @@ func change_room():
 	var game = get_tree().get_first_node_in_group("game")
 
 	if game:
-		game.change_room(target_scene_path)
+		game.change_room(target_scene_path, target_spawn_name)
