@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8hnl3ako1c5q"]
+[gd_scene load_steps=6 format=3 uid="uid://b8hnl3ako1c5q"]
 
 [ext_resource type="Texture2D" uid="uid://fiw54hf0t0kb" path="res://assets/door.png" id="1_hpvv5"]
 [ext_resource type="Script" uid="uid://d3dl0vvgtep6d" path="res://scritps/door.gd" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://oe78ffen7m0c" path="res://assets/door_shadow.png" id="3_83dcw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpvv5"]
 size = Vector2(16, 32)
@@ -25,3 +26,7 @@ shape = SubResource("RectangleShape2D_hpvv5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_uvdjg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 24)
+texture = ExtResource("3_83dcw")
