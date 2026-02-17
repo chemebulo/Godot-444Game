@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var target_scene: String
+@export var target_scene_path: String
 
 var player_in_range:= false
 
@@ -21,4 +21,11 @@ func _on_body_exited(body):
 		player_in_range = false
 
 func change_room():
-	get_tree().change_scene_to_file(target_scene)
+	if target_scene_path == "":
+		push_error("Door sin target_scene_path")
+		return
+
+	var game = get_tree().get_first_node_in_group("game")
+
+	if game:
+		game.change_room(target_scene_path)
