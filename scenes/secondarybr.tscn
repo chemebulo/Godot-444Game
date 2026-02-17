@@ -53,3 +53,4 @@ tile_set = SubResource("TileSet_lsqqr")
 
 [node name="Door" parent="." instance=ExtResource("4_cnxog")]
 position = Vector2(40, -16)
+target_scene_path = "res://scenes/mainbr.tscn"
