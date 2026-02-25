@@ -52,11 +52,11 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQABAAAAAAAAAAEAAQAAAAA
 tile_set = SubResource("TileSet_lsqqr")
 
 [node name="Door" parent="." instance=ExtResource("4_cnxog")]
-position = Vector2(136, -16)
+position = Vector2(56, -16)
 target_scene_path = "res://scenes/hallway.tscn"
 target_spawn_name = "Spawn_From_SecondaryBedroom"
 
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="Spawn_From_Hallway" type="Marker2D" parent="Spawn"]
-position = Vector2(136, 8)
+position = Vector2(56, 8)
