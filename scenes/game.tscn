@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://curbf3fqvcuw3"]
+[gd_scene load_steps=19 format=3 uid="uid://curbf3fqvcuw3"]
 
 [ext_resource type="Script" uid="uid://dx5vg7vw5auvl" path="res://scritps/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bee0r1ue2kxhn" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bpba4rvvx5mbb" path="res://scritps/pausemenu.gd" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://5dcfuapkebbl" path="res://scritps/hintlabel.gd" id="3_iywne"]
+[ext_resource type="FontFile" uid="uid://di8udoiwmcg6d" path="res://scenes/Minecraft.ttf" id="3_kvpfn"]
 [ext_resource type="Script" uid="uid://dji45yufq1v1k" path="res://scritps/controlspanel.gd" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://da6rbgrhyp28m" path="res://assets/menu_controles.png" id="4_vtaks"]
 [ext_resource type="Script" uid="uid://vkes644anpd7" path="res://scritps/fade_layer.gd" id="6_p57ef"]
@@ -54,7 +55,9 @@ offset_right = 309.0
 offset_bottom = 105.0
 scale = Vector2(0.26569, 0.26569)
 size_flags_horizontal = 4
-text = "Apretá H para ver los controles"
+theme_override_fonts/font = ExtResource("3_kvpfn")
+text = "Apreta H para ver los controles"
+vertical_alignment = 1
 script = ExtResource("3_iywne")
 
 [node name="ControlsPanel" type="Panel" parent="UI"]
@@ -68,6 +71,7 @@ script = ExtResource("3_lbhrr")
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("2_yqjtg")
 
 [node name="Control" type="Control" parent="PauseMenu"]
