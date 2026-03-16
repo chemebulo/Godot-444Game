@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://curbf3fqvcuw3"]
+[gd_scene load_steps=16 format=3 uid="uid://curbf3fqvcuw3"]
 
 [ext_resource type="Script" uid="uid://dx5vg7vw5auvl" path="res://scritps/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bee0r1ue2kxhn" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -6,6 +6,30 @@
 [ext_resource type="Script" uid="uid://5dcfuapkebbl" path="res://scritps/hintlabel.gd" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dji45yufq1v1k" path="res://scritps/controlspanel.gd" id="3_lbhrr"]
 [ext_resource type="Script" uid="uid://vkes644anpd7" path="res://scritps/fade_layer.gd" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://b5b4xev7rajfm" path="res://assets/pausemenu_reanudar.png" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://u7m0lcnw1yeg" path="res://assets/pausemenu_volver_al_menu.png" id="7_gee14"]
+[ext_resource type="Texture2D" uid="uid://c2fc0daq7sv2v" path="res://assets/pausemenu_salir.png" id="8_0tnpc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gee14"]
+texture = ExtResource("6_u5sy4")
+modulate_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tnpc"]
+texture = ExtResource("6_u5sy4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vtaks"]
+texture = ExtResource("7_gee14")
+modulate_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvpfn"]
+texture = ExtResource("7_gee14")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dinhu"]
+texture = ExtResource("8_0tnpc")
+modulate_color = Color(0.784314, 0.784314, 0.784314, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvuet"]
+texture = ExtResource("8_0tnpc")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lnu2h")
@@ -86,16 +110,22 @@ scale = Vector2(0.425984, 0.425984)
 alignment = 1
 
 [node name="Button" type="Button" parent="PauseMenu/Control/VBoxContainer"]
+custom_minimum_size = Vector2(85, 30)
 layout_mode = 2
-text = "Reanudar"
+theme_override_styles/hover = SubResource("StyleBoxTexture_gee14")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0tnpc")
 
 [node name="Button2" type="Button" parent="PauseMenu/Control/VBoxContainer"]
+custom_minimum_size = Vector2(85, 30)
 layout_mode = 2
-text = "Volver al menú"
+theme_override_styles/hover = SubResource("StyleBoxTexture_vtaks")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kvpfn")
 
 [node name="Button3" type="Button" parent="PauseMenu/Control/VBoxContainer"]
+custom_minimum_size = Vector2(85, 30)
 layout_mode = 2
-text = "Salir"
+theme_override_styles/hover = SubResource("StyleBoxTexture_dinhu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kvuet")
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 layer = 100
