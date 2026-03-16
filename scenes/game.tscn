@@ -1,14 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://curbf3fqvcuw3"]
+[gd_scene load_steps=18 format=3 uid="uid://curbf3fqvcuw3"]
 
 [ext_resource type="Script" uid="uid://dx5vg7vw5auvl" path="res://scritps/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bee0r1ue2kxhn" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://bpba4rvvx5mbb" path="res://scritps/pausemenu.gd" id="2_yqjtg"]
 [ext_resource type="Script" uid="uid://5dcfuapkebbl" path="res://scritps/hintlabel.gd" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dji45yufq1v1k" path="res://scritps/controlspanel.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://da6rbgrhyp28m" path="res://assets/menu_controles.png" id="4_vtaks"]
 [ext_resource type="Script" uid="uid://vkes644anpd7" path="res://scritps/fade_layer.gd" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://b5b4xev7rajfm" path="res://assets/pausemenu_reanudar.png" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://u7m0lcnw1yeg" path="res://assets/pausemenu_volver_al_menu.png" id="7_gee14"]
 [ext_resource type="Texture2D" uid="uid://c2fc0daq7sv2v" path="res://assets/pausemenu_salir.png" id="8_0tnpc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trtic"]
+texture = ExtResource("4_vtaks")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gee14"]
 texture = ExtResource("6_u5sy4")
@@ -54,27 +58,16 @@ text = "Apretá H para ver los controles"
 script = ExtResource("3_iywne")
 
 [node name="ControlsPanel" type="Panel" parent="UI"]
-offset_left = 77.0
-offset_top = 34.0
-offset_right = 117.0
-offset_bottom = 74.0
+offset_left = 9.0
+offset_top = 74.0
+offset_right = 48.0
+offset_bottom = 110.0
+scale = Vector2(1.36446, 0.696225)
+theme_override_styles/panel = SubResource("StyleBoxTexture_trtic")
 script = ExtResource("3_lbhrr")
-
-[node name="Label" type="Label" parent="UI/ControlsPanel"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 11.0
-offset_right = 168.0
-offset_bottom = 112.0
-scale = Vector2(0.203656, 0.203656)
-text = "W A S D - Movimiento
-E - Interactuar
-H - Ver controles
-ESC - Pausa"
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("2_yqjtg")
 
 [node name="Control" type="Control" parent="PauseMenu"]
@@ -100,9 +93,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -30.0
-offset_top = -23.0
-offset_right = 94.0
+offset_left = -24.0
+offset_top = -21.0
+offset_right = 91.0
 offset_bottom = 78.0
 grow_horizontal = 2
 grow_vertical = 2
